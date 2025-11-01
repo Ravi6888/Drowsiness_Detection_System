@@ -89,7 +89,7 @@ python drowsiness_detection.py
   <li> Press <b>ESC</b> to exit the program.</li>
 </ul>
 
-<p align="center"><i><img width="495" height="391" alt="image" src="https://github.com/user-attachments/assets/06aa7e4a-6032-4e1e-a18e-5d9c8b3ee0bc" />
+<p align="center"><i><img width="330" height="260" alt="image" src="https://github.com/user-attachments/assets/06aa7e4a-6032-4e1e-a18e-5d9c8b3ee0bc" />
 </i></p>
 
 <hr>
