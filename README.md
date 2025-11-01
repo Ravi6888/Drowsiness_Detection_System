@@ -1,117 +1,120 @@
-# Drowsiness_Detection_System
+<h1 align="center">Drowsiness Detection System</h1>
 
-Drowsiness Detection System
+<p align="center">
+  <b>Real-time Computer Vision System for Driver Fatigue Detection</b><br>
+  Built using <b>MediaPipe FaceMesh</b>, <b>OpenCV</b>, and <b>Pygame</b> for real-time monitoring and alert generation.
+</p>
 
-A real-time computer vision system that monitors eye activity to detect driver drowsiness using MediaPipe FaceMesh, OpenCV, and Pygame for alert sounds.
+<hr>
 
+<h2>➤ Project Overview</h2>
+<p>
+A real-time computer vision system that monitors <b>eye activity</b> to detect driver drowsiness using
+<b>MediaPipe FaceMesh</b>, <b>OpenCV</b>, and <b>Pygame</b> for alert sounds.<br>
 When the driver’s eyes remain closed for a defined duration, an audible alarm is triggered to prevent accidents due to fatigue.
+</p>
 
-________________________________________
+<hr>
 
-	**Features**
+<h2>➤ Features</h2>
+<ul>
+  <li> Real-time face and eye tracking using MediaPipe.</li>
+  <li> Calculates Eye Aspect Ratio (EAR) to detect eye closure.</li>
+  <li> Triggers an alert sound when drowsiness is detected.</li>
+  <li> Uses webcam feed for live monitoring.</li>
+  <li> Lightweight and easy to run locally with Python.</li>
+</ul>
 
-•	Real-time face and eye tracking using MediaPipe.
+<hr>
 
-•	 Calculates Eye Aspect Ratio (EAR) to detect eye closure.
+<h2>➤ Tech Stack</h2>
+<table>
+<tr><th>Component</th><th>Description</th></tr>
+<tr><td><b>Language</b></td><td>Python 3.x</td></tr>
+<tr><td><b>Libraries</b></td><td>opencv-python, mediapipe, numpy, pygame</td></tr>
+<tr><td><b>Hardware</b></td><td>Webcam</td></tr>
+<tr><td><b>Platform</b></td><td>Windows / macOS / Linux</td></tr>
+</table>
 
-•	 Triggers an alert sound when drowsiness is detected.
+<hr>
 
-•	 Uses webcam feed for live monitoring.
+<h2>➤ Installation</h2>
 
-•	 Lightweight and easy to run locally with Python.
-
-________________________________________
-
-	**Tech Stack**
-
-Component	Description
-
-Language:	Python 3.x
-
-Libraries:	opencv-python, mediapipe, numpy, pygame
-
-Hardware:	Webcam
-
-Platform:	Windows / macOS / Linux
-
-________________________________________
-
-	**Installation**
-
-1.	Clone the Repository
-
+<ol>
+  <li><b>Clone the Repository</b>
+    <pre>
 git clone https://github.com/Ravi6888/Drowsiness_Detection_System.git
-
 cd Drowsiness_Detection_System
+    </pre>
+  </li>
 
-2.	 Install Dependencies
+  <li><b>Install Dependencies</b>
+    <p>Install the required Python libraries using pip:</p>
+    <pre>
+pip install opencv-python mediapipe numpy pygame
+    </pre>
+  </li>
 
-Install the required Python libraries using pip:
+  <li><b>Add Alert Sound File</b>
+    <p>
+      Place an audio file named <code>alert.wav</code> in the same directory as the script.<br>
+      This file will be played when drowsiness is detected.
+    </p>
+  </li>
 
-pip install opencv-python mediapipe numpy pygame 
-
-3.	Add Alert Sound File
-
-Place an audio file named alert.wav in the same directory as the script.
-
-This file will be played when drowsiness is detected.
-
-4.	Run the Program
-
+  <li><b>Run the Program</b>
+    <pre>
 python drowsiness_detection.py
+    </pre>
+  </li>
+</ol>
 
-________________________________________
+<hr>
 
-	**How It Works**
+<h2>➤ How It Works</h2>
+<ul>
+  <li> The webcam captures live video frames.</li>
+  <li> MediaPipe FaceMesh identifies facial landmarks, focusing on the eyes.</li>
+  <li> The Eye Aspect Ratio (EAR) is calculated using six eye landmarks.</li>
+  <li> If EAR drops below <code>0.3</code> for more than 20 consecutive frames, it indicates closed eyes → triggers a drowsiness alert.</li>
+  <li> Pygame plays an alert sound (<code>alert.wav</code>) and displays a warning message on screen.</li>
+</ul>
 
-1.	The webcam captures live video frames.
+<hr>
 
-2.	MediaPipe FaceMesh identifies facial landmarks, focusing on the eyes.
+<h2>➤ Output Preview</h2>
+<ul>
+  <li> Green dots marking eye landmarks.</li>
+  <li> Red “<b>DROWSINESS ALERT!</b>” text when fatigue is detected.</li>
+  <li> Press <b>ESC</b> to exit the program.</li>
+</ul>
 
-3.	The Eye Aspect Ratio (EAR) is calculated using six eye landmarks.
+<p align="center"><i><img width="495" height="391" alt="image" src="https://github.com/user-attachments/assets/06aa7e4a-6032-4e1e-a18e-5d9c8b3ee0bc" />
+</i></p>
 
-4.	If the EAR drops below a threshold (0.3) for more than 20 consecutive frames,
-it indicates the user’s eyes are closed → drowsiness alert is triggered.
+<hr>
 
-5.	Pygame plays an alert sound (alert.wav) and displays a warning on screen.
+<h2>➤ Configuration</h2>
+<table>
+<tr><th>Parameter</th><th>Description</th><th>Default</th></tr>
+<tr><td>EAR_THRESHOLD</td><td>Minimum eye aspect ratio for open eyes</td><td>0.3</td></tr>
+<tr><td>EAR_CONSEC_FRAMES</td><td>Frames below threshold before alert</td><td>20</td></tr>
+<tr><td>alert.wav</td><td>Sound file for drowsiness warning</td><td>Required</td></tr>
+</table>
 
-________________________________________
+<hr>
 
-	**Output Preview**
+<h2>➤ Customization Ideas</h2>
+<ul>
+  <li> Add face orientation (head tilt) detection for more accuracy.</li>
+  <li> Integrate yawning detection using mouth landmarks.</li>
+  <li> Display a real-time EAR graph or fatigue score.</li>
+  <li> Add SMS/email alerts using Twilio or similar APIs.</li>
+  <li> Deploy on Raspberry Pi with a small display for embedded systems.</li>
+</ul>
 
-When running, the webcam window displays:
+<hr>
 
-•	Green dots marking eye landmarks.
-
-•	Red “DROWSINESS ALERT!” text when fatigue is detected.
-
- <img width="495" height="391" alt="image" src="https://github.com/user-attachments/assets/4d4b3caa-5f83-4771-a8fe-eab1ca3bd8f8" />
-
-
-Press ESC to exit the program.
-
-________________________________________
-
-	**Configuration**
-
-Parameter----------------Description----------------------------Default
-
-EAR_THRESHOLD-------Minimum eye aspect ratio for open eyes---------0.3
-
-EAR_CONSEC_FRAMES--------Frames below threshold before alert-------20
-
-alert.wav----------------Sound file for drowsiness warning---------Required
-
-________________________________________
-
-	**Customization Ideas**
-
-•	Add face orientation (head tilt) detection for additional accuracy.
-
-•	Integrate yawning detection using mouth landmarks.
-
-•	Display real-time EAR graph or fatigue score.
-
-•	Add SMS/email alert using twilio or similar APIs.
-
-•	Deploy on a Raspberry Pi with a small display.
+<p align="center">
+⭐ <i>If you found this project useful, consider giving it a star!</i> ⭐
+</p>
